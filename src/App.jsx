@@ -1,7 +1,11 @@
-import React from "react";
+import React from 'react'
 
 const App = () => {
-  return <div>Basic Pursuit React Starter</div>;
-};
+  return (
+    <div>
+      <h1>Pokemon Frontend</h1>
+    </div>
+  )
+}
 
-export default App;
+export default App
