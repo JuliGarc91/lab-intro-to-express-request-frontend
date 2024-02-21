@@ -27,6 +27,7 @@ const App = () => {
           }
         </div>
         } />
+      <Route path='/pokemon/:indexOfArr' element={<SinglePokemonComponent pokemon={pokemon} />} />
     </Routes>
   )
 }
