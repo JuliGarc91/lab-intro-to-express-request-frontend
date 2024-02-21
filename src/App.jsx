@@ -1,26 +1,33 @@
 import { useEffect, useState } from 'react'
+import { Routes, Route } from 'react-router-dom';
 
 
 const App = () => {
   const [pokemon, setPokemon] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch("http://localhost:8888/pokemon")
     .then((res) => res.json())
     .then((data) => setPokemon(data))
   }, [])
   // console.log(pokemon)
   return (
-    <div>
-      {
-        pokemon.length > 0 &&
-        pokemon.map((singlePoke, index)=>(
-          <div key={index}>
-          <img src={singlePoke.img} alt={singlePoke.name}/>
-          </div>
-        ))
-      }
-    </div>
+  <Routes>
+    <Route path='/'element={<div>Welcome to the Pokémon App</div>}/>
+      <Route path='/pokemon' element={
+        <div>
+          {
+            pokemon.length > 0 &&
+            pokemon.map((singlePoke, index)=>(
+              <div key={index}>
+              <img src={singlePoke.img} alt={singlePoke.name}/>
+              <button>Click to see Attributes of {singlePoke.name}</button>
+              </div>
+            ))
+          }
+        </div>
+        } />
+    </Routes>
   )
 }
 
