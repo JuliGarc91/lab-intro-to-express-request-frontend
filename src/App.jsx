@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
+import SinglePoke from './components/SinglePoke';
 
 
 const App = () => {
@@ -27,7 +28,7 @@ const App = () => {
           }
         </div>
         } />
-      <Route path='/pokemon/:indexOfArr' element={<SinglePokemonComponent pokemon={pokemon} />} />
+      <Route path='/pokemon/:indexOfArr' element={<SinglePoke pokemon={pokemon} />} />
     </Routes>
   )
 }
