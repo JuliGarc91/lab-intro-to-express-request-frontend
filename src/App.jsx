@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import SinglePoke from './components/SinglePoke';
+import SearchPoke from './components/SearchPoke';
 
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
           }
         </div>
         } />
+      <Route path='/pokemon/search' element={<SearchPoke/>} />
       <Route path='/pokemon/:id' element={<SinglePoke pokemon={pokemon} />} />
     </Routes>
   )
