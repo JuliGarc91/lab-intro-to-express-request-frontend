@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import SinglePoke from './components/SinglePoke';
 
 
 const App = () => {
   const [pokemon, setPokemon] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:8888/pokemon")
@@ -12,6 +13,10 @@ const App = () => {
     .then((data) => setPokemon(data))
   }, [])
   // console.log(pokemon)
+  const handleButtonClick = (index) => {
+    navigate(`/pokemon/${index}`)
+  }
+
   return (
   <Routes>
     <Route path='/'element={<div>Welcome to the Pokémon App</div>}/>
@@ -22,7 +27,8 @@ const App = () => {
             pokemon.map((singlePoke, index)=>(
               <div key={index}>
               <img src={singlePoke.img} alt={singlePoke.name}/>
-              <button>Click to see Attributes of {singlePoke.name}</button>
+              <button
+              onClick={()=>handleButtonClick(index)}>Click to see Attributes of {singlePoke.name}</button>
               </div>
             ))
           }

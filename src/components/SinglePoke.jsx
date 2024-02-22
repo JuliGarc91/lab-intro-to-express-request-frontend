@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 const SinglePoke = ({ pokemon }) => {
     const { indexOfArr } = useParams(); // kind of like req.param on server side
     const poke = pokemon[indexOfArr]; // made key for index
