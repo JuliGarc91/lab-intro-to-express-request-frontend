@@ -25,11 +25,11 @@ const App = () => {
   <Routes>
     <Route path='/'element={<div>Welcome to the Pokémon App</div>}/>
       <Route path='/pokemon' element={
-        <div>
+        <div className='container'>
           {
             pokemon.length > 0 &&
             pokemon.map((singlePoke, index)=>(
-              <div key={index}>
+              <div key={index} className='square'>
               <img src={singlePoke.img} alt={singlePoke.name}/>
               <button
               onClick={()=>handleButtonClick(index)}>Click to see Attributes of {singlePoke.name}</button>

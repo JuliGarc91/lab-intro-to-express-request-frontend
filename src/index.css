@@ -3,3 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+.container {
+  width: 700px;
+  margin: 100px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.square {
+  width: 250px;
+  height: 250px;
+  padding: 10px;
+}
