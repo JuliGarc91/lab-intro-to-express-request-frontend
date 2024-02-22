@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import SinglePoke from './components/SinglePoke';
 import SearchPoke from './components/SearchPoke';
+import NavBar from './components/NavBar';
 
 
 const App = () => {
@@ -19,6 +20,8 @@ const App = () => {
   }
 
   return (
+  <>
+  <NavBar />
   <Routes>
     <Route path='/'element={<div>Welcome to the Pokémon App</div>}/>
       <Route path='/pokemon' element={
@@ -38,6 +41,7 @@ const App = () => {
       <Route path='/pokemon/search' element={<SearchPoke/>} />
       <Route path='/pokemon/:id' element={<SinglePoke pokemon={pokemon} />} />
     </Routes>
+    </>
   )
 }
 
