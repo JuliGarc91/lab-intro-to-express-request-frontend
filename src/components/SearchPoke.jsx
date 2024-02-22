@@ -5,6 +5,7 @@ const SearchPoke = () => {
   const [results, setResults] = useState([]);
   const [searching, setSearching] = useState(false); // for whenever user starts putting input to search
 
+  // need to figure out functionality where all instances of 'name':'nidoran?' show up
   useEffect(() => {
     if (searching) { // if theres an input means there's data being inputted by user for searching (means searching is truthy)
       fetch(`http://localhost:8888/pokemon/search?name=${searchedPoke}`) // static endpoint looks like this because used req.query in server
