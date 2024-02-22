@@ -34,7 +34,7 @@ const App = () => {
           }
         </div>
         } />
-      <Route path='/pokemon/:indexOfArr' element={<SinglePoke pokemon={pokemon} />} />
+      <Route path='/pokemon/:id' element={<SinglePoke pokemon={pokemon} />} />
     </Routes>
   )
 }
