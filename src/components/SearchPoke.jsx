@@ -42,7 +42,7 @@ const SearchPoke = () => {
       </form>
       <div>
         {results.map((poke, index) => (
-          <div key={index}>
+          <div key={index}className="square">
             <img src={poke.img} alt={poke.name} />
             <p>{poke.name}</p>
           </div>

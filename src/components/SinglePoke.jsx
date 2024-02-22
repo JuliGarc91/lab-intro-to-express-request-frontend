@@ -4,7 +4,7 @@ const SinglePoke = ({ pokemon }) => {
     const poke = pokemon[id]; // made key for index
   
     return ( // if poke is truthy ternary to display the pokemon (it's truthy if it exists at selected index - user selects it by clicking button)
-    <div>
+    <div className="square">
         {poke ? (
             <>
                 <img src={poke.img} alt={poke.name} />

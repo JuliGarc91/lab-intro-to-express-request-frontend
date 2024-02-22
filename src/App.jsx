@@ -23,7 +23,7 @@ const App = () => {
   <>
   <NavBar />
   <Routes>
-    <Route path='/'element={<div>Welcome to the Pokémon App</div>}/>
+    <Route path='/'element={<h1>Welcome to the Pokémon App</h1>}/>
       <Route path='/pokemon' element={
         <div className='container'>
           {
